@@ -32,12 +32,46 @@
     a:hover {
       background-color: #0056b3;
     }
+    img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    #contador {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
+  <!-- Imagen decorativa -->
+  <img src="https://via.placeholder.com/100" alt="Imagen decorativa">
+
   <!-- Cambia la URL por la dirección del archivo PDF en tu repositorio -->
   <iframe src="https://github.com/IBEJMFR/Red_Ofertas_Index/raw/main/Indice_de_negocios_-_RED_ofertas7.pdf"></iframe>
-  <a href="https://github.com/IBEJMFR/Red_Ofertas_Index/raw/main/Indice_de_negocios_-_RED_ofertas7.pdf" download>Ver catalogo PDF</a>
+
+  <!-- Botón de descarga -->
+  <a id="download-link" href="https://github.com/IBEJMFR/Red_Ofertas_Index/raw/main/Indice_de_negocios_-_RED_ofertas7.pdf" download>Descargar PDF</a>
+
+  <!-- Contador de visitas -->
+  <div id="contador">Este enlace ha sido visitado 0 veces.</div>
+
+  <script>
+    // Variable para contar visitas
+    let visitas = 0;
+
+    // Elementos HTML
+    const contador = document.getElementById('contador');
+    const enlaceDescarga = document.getElementById('download-link');
+
+    // Incrementar contador al hacer clic en el enlace de descarga
+    enlaceDescarga.addEventListener('click', () => {
+      visitas++;
+      contador.textContent = `Este enlace ha sido visitado ${visitas} veces.`;
+    });
+  </script>
 </body>
 </html>
+
 
